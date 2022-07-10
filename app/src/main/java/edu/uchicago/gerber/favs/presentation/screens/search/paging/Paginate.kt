@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.favs.data.models
+package edu.uchicago.gerber.favs.presentation.screens.search.paging
 
 data class Paginate(
     var query: String = "",

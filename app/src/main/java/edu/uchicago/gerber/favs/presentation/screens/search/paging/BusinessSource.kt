@@ -6,11 +6,7 @@ import androidx.paging.PagingState
 import edu.uchicago.gerber.favs.R
 import edu.uchicago.gerber.favs.common.Constants
 import edu.uchicago.gerber.favs.data.models.Business
-import edu.uchicago.gerber.favs.data.models.Paginate
 import edu.uchicago.gerber.favs.data.repository.YelpRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import javax.inject.Inject
 
 class BusinessSource @Inject constructor(

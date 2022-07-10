@@ -11,7 +11,7 @@ import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.uchicago.gerber.favs.common.Constants
 import edu.uchicago.gerber.favs.data.models.Business
-import edu.uchicago.gerber.favs.data.models.Paginate
+import edu.uchicago.gerber.favs.presentation.screens.search.paging.Paginate
 import edu.uchicago.gerber.favs.data.repository.YelpRepository
 import edu.uchicago.gerber.favs.presentation.screens.search.paging.BusinessSource
 import edu.uchicago.gerber.favs.presentation.search.SearchOperation
