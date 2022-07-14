@@ -14,7 +14,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object HiltInjection4Yelp {
+object Hilt4Yelp {
     @Provides
     @Singleton
     fun provideYelpApi(): YelpApi {
