@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.favs
+package edu.uchicago.gerber.books
 
 import org.junit.Test
 
