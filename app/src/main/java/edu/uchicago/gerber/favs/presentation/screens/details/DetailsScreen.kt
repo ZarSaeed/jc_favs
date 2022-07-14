@@ -43,7 +43,7 @@ fun DetailsScreen(
 
     //observe the business
     val business = favViewModel.business.value
-    val context = (LocalContext.current as? Activity)
+    val activity = (LocalContext.current as? Activity)
 
 
     Scaffold(topBar = {
@@ -91,7 +91,7 @@ fun DetailsScreen(
                                     Intent.EXTRA_TEXT,
                                     business.name + "\n \n"
                                 )
-                                context?.startActivity(sendIntent)
+                                activity?.startActivity(sendIntent)
                             }
                             .align(Alignment.CenterVertically)
                             .padding(10.dp, 0.dp, 0.dp, 0.dp))
@@ -107,7 +107,7 @@ fun DetailsScreen(
                                         "google.navigation:q=${business.location?.displayAddress}"
                                     )
                                 )
-                                context?.startActivity(intent)
+                                activity?.startActivity(intent)
                             }
                             .align(Alignment.CenterVertically)
                             .padding(10.dp, 0.dp, 10.dp, 0.dp))
@@ -121,7 +121,7 @@ fun DetailsScreen(
                                     Intent.ACTION_DIAL,
                                     Uri.parse("tel:${business.displayPhone}")
                                 )
-                                context?.startActivity(intent)
+                                activity?.startActivity(intent)
                             }
                             .align(Alignment.CenterVertically)
                             .padding(0.dp, 0.dp, 20.dp, 0.dp))
@@ -234,7 +234,7 @@ fun DetailsScreen(
 
 
                     onClick = {
-                        Toast.makeText(context, "Favorite Pressed", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, "Favorite Pressed", Toast.LENGTH_LONG).show()
 
                     },
 
