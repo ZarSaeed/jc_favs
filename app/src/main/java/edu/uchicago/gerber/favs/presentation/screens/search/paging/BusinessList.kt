@@ -23,10 +23,10 @@ import edu.uchicago.gerber.favs.presentation.widgets.BusinessRow
 @Composable
 fun BusinessList(favViewModel: FavViewModel, navController: NavController) {
 
-    val res = favViewModel.searchState.value.data?.collectAsLazyPagingItems()
+    val lazyPagingItems = favViewModel.searchState.value.data?.collectAsLazyPagingItems()
 
     return LazyColumn {
-        items(res!!) { business ->
+        items(lazyPagingItems!!) { business ->
             BusinessRow(item = business!!) {
                 favViewModel.setBusiness(business)
                 navController.navigate(
@@ -35,7 +35,7 @@ fun BusinessList(favViewModel: FavViewModel, navController: NavController) {
             }
         }
 
-        res.apply {
+        lazyPagingItems.apply {
             when {
                 loadState.refresh is LoadState.Loading -> {
                     item {
