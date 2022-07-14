@@ -39,14 +39,14 @@ class BusinessSource @Inject constructor(
                 )
             } else {
                 //TODO IMPORTANT, ONCE YOU GET YOUR YELP3 API KEY, remove the following block
-                //TODO and revert to LoadResult.Error(Exception())
+                //TODO and revert to LoadResult.Error(Exception(response.message()))
                 val body = Constants.fakeBusinessResponse.businesses
                 LoadResult.Page(
                     data = body!!,
                     prevKey = if (prev == 0) null else prev - 1,
                     nextKey = if (body.size < params.loadSize) null else prev + 1
                 )
-                // LoadResult.Error(Exception())
+                //LoadResult.Error(Exception(response.message()))
             }
 
         } catch (e: Exception) {
