@@ -1,6 +1,7 @@
 package edu.uchicago.gerber.favs.presentation.widgets
 
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CornerSize
@@ -18,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.accompanist.coil.rememberCoilPainter
 import com.skydoves.landscapist.glide.GlideImage
 import edu.uchicago.gerber.favs.R
 import edu.uchicago.gerber.favs.data.models.Business
@@ -47,18 +49,19 @@ fun BusinessRow(
 
             Surface(modifier = Modifier.padding(0.dp, 0.dp, 10.dp, 0.dp)) {
 
-                GlideImage(
+                val image = rememberCoilPainter(
+                    request = item.imageUrl ?: "https://picsum.photos/id/1026/60/90",
+                    fadeIn = true
+                )
+                Image(
+                    painter = image,
+                    contentDescription = null,
                     modifier = Modifier
                         .width(60.dp)
                         .height(90.dp),
-                    imageModel = item.imageUrl,
-                    // Crop, Fit, Inside, FillHeight, FillWidth, None
-                    contentScale = ContentScale.FillHeight,
-                    placeHolder = painterResource(id = R.drawable.ic_placeholder)
-                    // shows an image with a circular revealed animation.
-                    // shows a placeholder ImageBitmap when loading.
-
+                    contentScale = ContentScale.FillHeight
                 )
+
             }
 
             Column() {

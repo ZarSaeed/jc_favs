@@ -145,6 +145,7 @@ fun DetailsScreen(
 
 
                 Divider()
+                Spacer(Modifier.height(20.dp))
                 GlideImage(
                     modifier = Modifier
                         .fillMaxWidth()
