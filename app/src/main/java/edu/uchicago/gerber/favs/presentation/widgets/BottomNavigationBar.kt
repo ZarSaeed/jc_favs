@@ -16,7 +16,7 @@ import edu.uchicago.gerber.favs.presentation.navagation.Screen
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
-    val items = listOf(
+    val tabs = listOf(
         Screen.Search,
         Screen.Favorites,
         Screen.Contact
@@ -27,16 +27,16 @@ fun BottomNavigationBar(navController: NavController) {
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
-        items.forEach { item ->
+        tabs.forEach { tab ->
             BottomNavigationItem(
-                icon = { Icon(painterResource(id = item.icon), contentDescription = item.title) },
-                label = { Text(text = item.title) },
+                icon = { Icon(painterResource(id = tab.icon), contentDescription = tab.title) },
+                label = { Text(text = tab.title) },
                 selectedContentColor = Color.Blue,
                 unselectedContentColor = Color.Blue.copy(0.4f),
                 alwaysShowLabel = true,
-                selected = currentRoute == item.route,
+                selected = currentRoute == tab.route,
                 onClick = {
-                    navController.navigate(item.route) {
+                    navController.navigate(tab.route) {
                         // Pop up to the start destination of the graph to
                         // avoid building up a large stack of destinations
                         // on the back stack as users select items
